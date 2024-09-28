@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/styles.css') }}">
+    <title>Página Inicial</title>
+</head>
+
+<body>
+    <div class="image-container">
+        <img id="background-image" class="image-background" src="{{ url_for('static', filename='fotos/2196508-fundo-preto-e-dourado-luxuoso-vetor_1_1.jpg') }}" alt="Background Image">
+
+        <!-- Conteúdo no canto superior direito -->
+        <!-- Conteúdo no canto superior direito -->
+<div class="top-right">
+    <h1>Documentação</h1>
+    <button class="project-presentation-button">Apresentação do Projeto</button>
+</div>
+
+
+        <!-- Conteúdo no canto inferior esquerdo -->
+        <div class="bottom-left">
+            <h1>Modulos CNQ</h1>
+            <p></p>
+            <nav>
+                <div class="nav-container">
+                    <div class="nav-item"><a href="/java">Java</a></div>
+                    <div class="nav-item"><a href="/python">Python</a></div>
+                    <div class="nav-item"><a href="/cpp">C++</a></div>
+                    <div class="nav-item"><a href="/db">Banco de Dados</a></div>
+                    <div class="nav-item"><a href="/reds">Redes</a></div>
+                    <div class="nav-item"><a href="/pross-comp">Processamento Computacional.</a></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>

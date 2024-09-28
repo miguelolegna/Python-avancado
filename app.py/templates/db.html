@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/db.css') }}">
+    <title>Banco de Dados</title>
+</head>
+<body>
+    <div class="video-container">
+        <!-- Video de background -->
+        <video id="myvideo" autoplay loop muted class="video-background"
+            src="{{ url_for('static', filename='videos/background neon.mp4') }}"></video>
+        <div class="overlay">
+            <!-- Conteúdo principal -->
+            <div class="container">
+                <h1>Banco de Dados</h1>
+
+                <h2>O que é?</h2>
+                <p>Um banco de dados é um sistema estruturado que armazena dados de forma organizada, permitindo fácil acesso e gerenciamento. Ele pode ser comparado a uma biblioteca digital, onde as informações são armazenadas em arquivos (tabelas) e podem ser facilmente encontradas e manipuladas.</p>
+
+                <h2>Como funciona?</h2>
+                <p>Os dados são armazenados em tabelas que contêm linhas e colunas. Cada linha é um registro (ou uma entrada de dados), enquanto cada coluna representa um campo específico desse registro. Bancos de dados utilizam Linguagens de Consulta Estruturada (SQL) para acessar e manipular os dados.</p>
+
+                <h2>Tipos de Bancos de Dados:</h2>
+                <ul>
+                    <li><strong>Bancos de Dados Relacionais:</strong> Organizam dados em tabelas relacionadas (ex: MySQL, PostgreSQL).</li>
+                    <li><strong>Bancos de Dados Não Relacionais:</strong> Armazenam dados em formatos variados, como documentos ou pares chave-valor (ex: MongoDB, Redis).</li>
+                    <li><strong>Bancos de Dados em Nuvem:</strong> Oferecem serviços de armazenamento e gerenciamento em ambientes baseados em nuvem (ex: Amazon RDS, Google Cloud Firestore).</li>
+                </ul>
+
+                <h2>Exemplo prático:</h2>
+                <p>Atividade: Organizar um banco de dados de brinquedos.</p>
+                <p>Imagine que você tem uma coleção de brinquedos. Você pode criar um banco de dados com as seguintes colunas:</p>
+                <ul>
+                    <li><strong>Nome:</strong> O nome do brinquedo.</li>
+                    <li><strong>Categoria:</strong> (ex: bonecos, carros, jogos).</li>
+                    <li><strong>Cor:</strong> A cor do brinquedo.</li>
+                    <li><strong>Quantidade:</strong> Quantos brinquedos dessa categoria você tem.</li>
+                </ul>
+
+                <h2>Código Exemplo:</h2>
+                <pre>
+<code>
+# Conectando-se a um banco de dados SQLite e criando uma tabela de brinquedos
+
+import sqlite3
+
+# Conectar ao banco de dados (ou criar se não existir)
+con = sqlite3.connect('brinquedos.db')
+cur = con.cursor()
+
+# Criar tabela
+cur.execute('''
+CREATE TABLE IF NOT EXISTS brinquedos (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    categoria TEXT NOT NULL,
+    cor TEXT NOT NULL,
+    quantidade INTEGER NOT NULL
+)
+''')
+
+# Inserir dados
+cur.execute("INSERT INTO brinquedos (nome, categoria, cor, quantidade) VALUES ('Carro', 'Veículos', 'Vermelho', 5)")
+cur.execute("INSERT INTO brinquedos (nome, categoria, cor, quantidade) VALUES ('Boneca', 'Personagens', 'Rosa', 3)")
+
+# Salvar as mudanças e fechar a conexão
+con.commit()
+con.close()
+</code>
+                </pre>
+                
+                <h2>Resumo e Conclusão:</h2>
+                <p>Um banco de dados é essencial. para gerenciar grandes volumes de informações de forma eficaz. Com a prática de criar e gerenciar um banco de dados, você pode entender como as informações são organizadas e acessadas, o que é fundamental na programação moderna.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* Background branco */
+    color: #333; /* Texto escuro, pode-se alterar para #000 para preto */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main container styling */
+.container {
+    background-color: #000000; /* Mantém branco no fundo do container */
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra em preto */
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #DAA520; /* Dourado para o título principal */
+    margin-bottom: 20px;
+}
+
+/* Section titles */
+h2 {
+    color: #000; /* Preto para os subtítulos */
+    border-bottom: 2px solid #DAA520; /* Linha dourada abaixo dos subtítulos */
+    margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+p {
+    color: #333; /* Texto mais escuro */
+    margin-bottom: 15px;
+}
+
+/* List styling */
+ul {
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Strong text styling */
+strong {
+    color: #DAA520; /* Texto em negrito dourado */
+}
+
+/* Code block styling */
+pre {
+    background-color: #000; /* Fundo preto para o bloco de código */
+    color: #DAA520; /* Texto dourado para contraste */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e7e7e7;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #000; /* Texto preto */
+}

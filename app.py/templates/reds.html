@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/reds.css') }}">
+    <title>Redes</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Redes</h1>
+
+        <h2>O que é?</h2>
+        <p>Redes de computadores são sistemas que conectam dispositivos para permitir a comunicação e o compartilhamento de
+            recursos.</p>
+
+        <h2>Como funciona?</h2>
+        <p>Quando você quer enviar uma mensagem, a rede utiliza dispositivos como roteadores e switches para direcionar a
+            mensagem ao destino correto.</p>
+
+        <h2>Tipos de Redes:</h2>
+        <ul>
+            <li><strong>Rede Local (LAN):</strong> Conecta computadores em um espaço limitado.</li>
+            <li><strong>Rede de Longa Distância (WAN):</strong> Conecta redes em grandes distâncias.</li>
+            <li><strong>Rede Sem Fio (Wi-Fi):</strong> Permite que dispositivos se conectem à rede sem fios.</li>
+        </ul>
+
+        <h2>Código Exemplo:</h2>
+        <pre>
+<code>
+def enviar_mensagem(mensagem, amigos):
+    for amigo in amigos:
+        print(f"Enviando mensagem para {amigo}: {mensagem}")
+
+amigos = ["Alice", "Bob", "Charlie"]
+enviar_mensagem("Olá, amigos!", amigos)
+</code>
+        </pre>
+
+        <h2>Resumo e Conclusão:</h2>
+        <p>As redes são fundamentais para a comunicação moderna e o compartilhamento de informações..</p>
+    </div>
+</body>
+
+</html>

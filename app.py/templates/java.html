@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/java.css') }}">
+    <title>Java</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Java</h1>
+
+        <h2>O que é?</h2>
+        <p>Java é uma linguagem de programação orientada a objetos amplamente utilizada no desenvolvimento de aplicativos
+            para dispositivos móveis, aplicações web, e sistemas corporativos. Com seu slogan "Write Once, Run Anywhere"
+            (Escreva uma vez, execute em qualquer lugar), Java permite que o código seja executado em diferentes
+            plataformas, desde que a JVM (Java Virtual Machine) esteja instalada.</p>
+
+        <h2>Como funciona?</h2>
+        <p>Ao programar em Java, você escreve o código em um arquivo de texto com a extensão <code>.java</code>. Esse código
+            é compilado em bytecode, que pode ser executado pela JVM. Essa abordagem garante que o mesmo código Java
+            funcione em qualquer sistema que tenha a JVM instalada, independentemente do sistema operacional.</p>
+
+        <h2>Características principais:</h2>
+        <ul>
+            <li><strong>Orientação a Objetos:</strong> Facilita a organização do código e a reutilização através de classes
+                e objetos.</li>
+            <li><strong>Segurança:</strong> Java é projetado para ser seguro, com recursos que protegem contra malware.</li>
+            <li><strong>Multithreading:</strong> Permite que múltiplas partes de um programa sejam executadas
+                simultaneamente, aumentando a eficiência.</li>
+        </ul>
+
+        <h2>Exemplo prático:</h2>
+        <p>Atividade: Criar um aplicativo simples.</p>
+        <p>Vamos criar um aplicativo que calcula a soma de dois números fornecidos pelo usuário.</p>
+
+        <h2>Código Exemplo:</h2>
+        <pre>
+    <code>
+    import java.util.Scanner;
+
+    public class Soma {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.print("Digite o primeiro número: ");
+            int num1 = scanner.nextInt();
+            
+            System.out.print("Digite o segundo número: ");
+            int num2 = scanner.nextInt();
+            
+            int soma = num1 + num2;
+            System.out.println("A soma é: " + soma);
+            
+            scanner.close();
+        }
+    }
+    </code>
+        </pre>
+
+        <h2>Resumo e Conclusão:</h2>
+        <p>Java é uma linguagem poderosa que se adapta a diversas necessidades de desenvolvimento. A prática de programação
+            em Java ajuda a entender conceitos fundamentais de lógica de programação, estruturas de controle, e orientação a
+            objetos..</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/* Estilo para a área de vídeo de fundo */
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    max-width: 800px; /* Controla a largura do conteúdo */
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente escuro */
+    border-radius: 15px;
+}
+
+/* Containers com sombras neon para os títulos */
+.title-container, .subtitle-container {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: white;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #00f7ff, 0 0 40px #00f7ff;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo transparente escuro */
+    box-shadow: 0px 0px 15px 5px rgba(255, 0, 255, 0.5), 0px 0px 15px 5px rgba(0, 247, 255, 0.5);
+}
+
+/* Sombra animada neon */
+@keyframes neonShadow {
+    0% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #00f7ff, 0 0 40px #00f7ff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #00f7ff, 0 0 50px #00f7ff;
+    }
+}
+
+h1, h2 {
+    animation: neonShadow 1.5s infinite alternate;
+}
+
+/* Ajustes para o parágrafo */
+p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Definir um subtítulo com um tamanho menor */
+h2 {
+    font-size: 1.8rem;
+}

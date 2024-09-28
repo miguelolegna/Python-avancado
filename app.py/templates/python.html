@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/Python.css') }}">
+    <title>Python</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Python</h1>
+
+        <h2>O que é?</h2>
+        <p>Python é uma linguagem de programação de alto nível, amplamente utilizada por sua simplicidade e legibilidade.</p>
+
+        <h2>Como funciona?</h2>
+        <p>Em Python, você escreve código em arquivos com a extensão <code>.py</code>. O código é interpretado por um
+            interpretador Python, que executa as instruções uma por uma.</p>
+
+        <h2>Características principais:</h2>
+        <ul>
+            <li><strong>Fácil de aprender:</strong> A sintaxe simples e clara permite que iniciantes aprendam rapidamente.
+            </li>
+            <li><strong>Versatilidade:</strong> Usado em diversas áreas, como web, ciência de dados, e automação.</li>
+        </ul>
+
+        <h2>Exemplo prático:</h2>
+        <p>Vamos desenvolver um jogo de adivinhação, onde o computador escolhe um número e o jogador tenta adivinhar.</p>
+
+        <pre>
+<code>
+import random
+
+def adivinhacao():
+    numero = random.randint(1, 10)
+    tentativas = 0
+
+    while True:
+        guess = int(input("Adivinhe o número de 1 a 10: "))
+        tentativas += 1
+
+        if guess == numero:
+            print("Você acertou! O número era:", numero)
+            print("Você precisou de", tentativas, "tentativas.")
+            break
+        else:
+            print("Tente novamente!")
+
+adivinhacao()
+</code>
+        </pre>
+
+        <h2>Resumo e Conclusão:</h2>
+        <p>Python é uma linguagem poderosa e acessível, ideal para quem está começando na programação..</p>
+    </div>
+</body>
+
+</html>

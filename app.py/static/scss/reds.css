@@ -1,0 +1,73 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Main container styling */
+.container {
+    background-color: #fff;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #1E90FF;
+    margin-bottom: 20px;
+}
+
+/* Section titles */
+h2 {
+    color: #1E90FF;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 15px;
+}
+
+/* List styling */
+ul {
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #FF4500;
+}
+
+/* Code block styling */
+pre {
+    background-color: #2e3440;
+    color: #d8dee9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #eceff4;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
