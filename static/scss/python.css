@@ -39,68 +39,84 @@ body {
     line-height: 1.6;
     padding: 20px;
     margin: 0; /* Remove a margem padrão do body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    overflow: hidden; /* Remove a barra de rolagem da página */
 }
 
 /* Estilos para o container principal */
 .container {
     background-color: var(--container-background);
-    width: 40%; /* Reduz a largura do container */
-    padding: 30px; /* Reduz o padding interno */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Aumenta o sombreamento */
-    border-radius: 20px; /* Curva mais os cantos */
-    opacity: 0.95; /* Deixa levemente transparente */
-    margin: 20px 480px; /* Adiciona espaçamento superior e inferior */
-    border: 2px solid var(--highlight-color); /* Adiciona uma borda */
-    color: var(--text-color);
-    
+    width: 60%; /* Define uma largura fixa */
+    height: 80%; /* Define uma altura fixa */
+    max-width: 800px; /* Define uma largura máxima */
+    max-height: 600px; /* Define uma altura máxima */
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    border: 2px solid var(--highlight-color);
+    overflow-y: scroll; /* Permite rolagem vertical dentro do container */
+    scrollbar-width: none; /* Firefox: oculta a barra de rolagem */
+    -ms-overflow-style: none; /* Internet Explorer e Edge: oculta a barra de rolagem */
+}
 
+/* Esconde a barra de rolagem no Chrome, Safari e Opera */
+.container::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem */
+}
+
+/* Estilos para o conteúdo do container */
+.container-content {
+    margin-right: 20px; /* Adiciona margem para o conteúdo não tocar a borda */
 }
 
 /* Estilos para o título */
 h1 {
     text-align: left;
     color: var(--secondary-text-color);
-    margin-bottom: 20px; /* Reduz o espaçamento inferior */
-    font-size: 30px; /* Reduz o tamanho da fonte */
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 /* Estilos para os subtítulos */
 h2 {
     color: var(--highlight-color);
-    margin-top: 20px; /* Adiciona espaçamento superior */
-    margin-bottom: 10px; /* Reduz o espaçamento inferior */
+    margin-top: 20px;
+    margin-bottom: 10px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
-    font-size: 22px; /* Reduz o tamanho dos subtítulos */
+    font-size: 22px;
 }
 
 /* Estilos para os parágrafos */
 p {
     color: var(--text-color);
     margin-bottom: 15px;
-    line-height: 1.5; /* Reduz a altura da linha */
-    font-size: 17px; /* Reduz o tamanho da fonte */
+    line-height: 1.5;
+    font-size: 17px;
 }
 
 /* Estilos para blocos de código */
 code {
     background-color: var(--code-background);
     color: var(--code-color);
-    padding: 5px 8px; /* Reduz o padding */
+    padding: 5px 8px;
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem; /* Reduz o tamanho da fonte do código */
+    font-size: 1rem;
 }
 
 pre {
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 15px; /* Reduz o padding */
+    padding: 15px;
     border-radius: 10px;
     margin-top: 20px;
-    margin-bottom: 20px; /* Reduz o espaçamento inferior */
+    margin-bottom: 20px;
     overflow-x: auto;
-    font-size: 1rem; /* Reduz o tamanho da fonte do bloco de código */
+    font-size: 1rem;
 }
 
 /* Estilos para listas */
@@ -110,7 +126,7 @@ ul {
 
 ul li {
     margin-bottom: 10px;
-    font-size: 1rem; /* Reduz o tamanho dos itens da lista */
+    font-size: 1rem;
 }
 
 strong {

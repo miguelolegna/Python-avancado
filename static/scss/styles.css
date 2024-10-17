@@ -1,121 +1,150 @@
 @charset "UTF-8";
-
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.719);
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ocupa toda a altura da tela */
-    overflow: hidden;
-}
-
-.image-background {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para cobrir todo o container */
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* Div superior à direita */
-.top-right {
-    position: absolute;
-    top: 10%;
-    right: 15%;
-    color: white;
-    padding: 50px;
-    background-color: rgb(0, 0, 0); 
-    border-radius: 100px;
-    z-index: 2;
-    width: 30%; 
-    text-align: center;
-    
-    box-shadow: 0px 4px 20px #eecc0d; /* Sombra abaixo do contêiner */
-}
-
-/* Div inferior à esquerda */
-.bottom-left {
-  position: absolute;
-  bottom: 5%; /* Reduza o valor de 'bottom' para mover o container mais para baixo */
-  right: 15%;
-  left: 20%;  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
   color: white;
-  padding: 50px; 
-  background-color: rgb(0, 0, 0); 
-  border-radius: 100px;
+  background-color: black;
+}
+
+.video-container {
+  position: fixed;
+  /* Usando fixed para ficar estático */
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  /* Ocupa toda a altura da tela */
+  overflow: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* Centraliza o container do vídeo */
+  z-index: -1;
+  /* Para que o vídeo fique atrás do conteúdo */
+}
+
+.video-container .video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  /* Coloca o vídeo abaixo do texto */
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* Centraliza o vídeo */
+  background-color: black;
+}
+
+.video-container .overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* Centraliza o texto */
+  color: white;
+  /* Cor do texto */
   z-index: 2;
-  width: 30%; 
+  /* Coloca o texto acima do vídeo */
   text-align: center;
-  
-  box-shadow: 0px 4px 20px #eecc0d; /* Sombra abaixo do contêiner */
+  /* Centraliza o texto */
+  font-size: 2em;
+  /* Tamanho da fonte */
 }
 
-/* Container das linhas de botões */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 40px; /* Espaçamento entre as linhas */
-    
-
+nav {
+  position: relative;
+  /* Mantenha o nav em um nível de empilhamento */
+  z-index: 3;
+  /* Aumente o z-index para ser maior que o do vídeo */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fundo semitransparente para melhor visibilidade */
+  padding: 10px;
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  display: inline-block;
+  /* Para que a navegação ocupe apenas o espaço necessário */
 }
 
-/* Linha de botões */
-.button-row {
-    display: flex;
-    justify-content: space-between; /* Distribui os botões uniformemente */
-    gap: 50px;
-    
+.nav-item {
+  display: inline-block;
+  margin: 0 15px;
 }
 
-/* Estilos para os botões */
-.nav-button {
-    background-color: #000000;
-    color: #FFD700;
-    padding: 5px 5px; /* Reduz o padding para botões menores */
-    text-align: center;
-    border: 3px solid #eecc0d;
-    border-radius: 20px;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 120px; /* Largura definida para os botões */
-    padding: 20px 10px; /* Aumenta o padding para mais altura e largura */
-    
-    box-shadow: 0px 4px 20px #eecc0d; /* Sombra abaixo do contêiner */
-    
+nav a {
+  color: #FFD700;
+  /* Cor do texto dourado */
+  text-decoration: none;
+  /* Remover sublinhado */
+  font-size: 1.2em;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  /* Transição suave para a cor */
 }
 
-.nav-button:hover {
-    background-color: #FFD700;
-    color: black;
+nav a:hover {
+  color: white;
+  /* Cor do texto ao passar o mouse */
 }
 
-/* Estilos para o botão de apresentação */
-.project-presentation-button {
-    background-color: #000000;
-    color: #FFD700;
-    padding: 5px 5px; /* Reduz o padding para botões menores */
-    text-align: center;
-    border: 3px solid #eecc0d;
-    border-radius: 20px;
-    font-size: 0.8em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 120px; /* Largura definida para os botões */
-    padding: 20px 10px; /* Aumenta o padding para mais altura e largura */
-    
-    box-shadow: 0px 4px 20px #eecc0d; /* Sombra abaixo do contêiner */
+/* Botão com efeito de brilho (opcional, se desejar adicionar) */
+.glow-button {
+  background-color: transparent;
+  /* Fundo transparente */
+  border: 2px solid #FFD700;
+  /* Cor da borda dourada */
+  color: #FFD700;
+  /* Cor do texto dourado */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  /* Para posicionar o pseudo-elemento */
+  overflow: hidden;
+  /* Para esconder o brilho que sai do botão */
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  /* Transição para a cor do texto */
+  margin: 10px 0;
 }
 
-.project-presentation-button:hover {
-    background-color: #FFD700;
-    color: black;
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 215, 0, 0.5);
+  /* Cor do brilho */
+  border-radius: 50%;
+  /* Canto arredondado */
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  /* Começa invisível */
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  /* Transição para o efeito de brilho */
+  z-index: -1;
+  /* Para que fique atrás do botão */
 }
+
+.glow-button:hover {
+  color: white;
+  /* Muda a cor do texto no hover */
+}
+
+.glow-button:hover::before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  /* Expande o brilho ao passar o mouse */
+}
+/*# sourceMappingURL=styles.css.map */
