@@ -25,7 +25,9 @@
                     <a href="/API" class="project-presentation-button">API</a>
                     <a href="/AI" class="project-presentation-button">AI</a>
                     <a href="/tecnologia" class="project-presentation-button">Tecnologiausada</a>
-                    
+                    <a href="/JAI" class="project-presentation-button">Jai</a>
+                <button onclick="testAudio()">Testar Áudio</button>
+
                 </div>
             </nav>
         </div>
@@ -48,7 +50,109 @@
                 </div>
             </div>
         </div>
+
+        <!-- Nova seção para descrever as funcionalidades da IA -->
+        <div class="ia-features">
+            <h2>Funcionalidades da IA</h2>
+            <p>A nossa Inteligência Artificial possui as seguintes funcionalidades:</p>
+            <ul>
+                <li><strong>Conversão de Áudio para Texto:</strong> O usuário pode gravar sua voz e a IA irá transcrever o áudio em texto, permitindo uma interação mais natural.</li>
+                <li><strong>Conversão de Texto para Áudio:</strong> A IA pode ler em voz alta as respostas, proporcionando uma experiência auditiva ao usuário.</li>
+                <li><strong>Gerenciamento de Tarefas:</strong> A IA ajuda os usuários a gerenciar suas tarefas e metas, enviando lembretes e sugestões.</li>
+                <li><strong>Interação com APIs:</strong> A IA se comunica com outras IAs e sistemas através de APIs, permitindo acesso a informações em tempo real.</li>
+                <li><strong>Suporte a Comandos de Voz:</strong> Os usuários podem interagir com a IA usando comandos de voz, tornando a experiência mais intuitiva.</li>
+                
+            </ul>
+            
+            <!-- Adicione o botão de teste de áudio aqui -->
+            <button onclick="testAudio()">Testar Áudio</button>
+        </div>
+
+        <!-- Adicione esta seção antes da div "ia-features" -->
+        <div class="ia-interaction">
+            <h2>Interaja com a IA</h2>
+            <textarea id="pergunta" rows="4" cols="50" placeholder="Digite sua pergunta aqui..."></textarea>
+            <button onclick="perguntar()">Enviar Pergunta</button>
+            <input type="file" id="audioInput" accept="audio/*">
+            <button onclick="uploadAudio()">Enviar Áudio</button>
+            <div id="resposta"></div>
+        </div>
+
     </div>
+
+    <!-- JavaScript para interações -->
+    <script>
+        function perguntar() {
+            const pergunta = document.getElementById('pergunta').value;
+            fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({pergunta: pergunta}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('resposta').innerText = data.resposta;
+                // Chamar a função para converter a resposta em áudio
+                textToAudio(data.resposta);
+            })
+            .catch(error => {
+                document.getElementById('resposta').innerText = "Erro ao conectar com o servidor: " + error;
+            });
+        }
+
+        function uploadAudio() {
+            const audioFile = document.getElementById('audioInput').files[0];
+            const formData = new FormData();
+            formData.append('audio', audioFile);
+
+            fetch('/audio_to_text', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.texto) {
+                    document.getElementById('pergunta').value = data.texto; // Preencher a pergunta com o texto reconhecido
+                    perguntar(); // Chama a função perguntar após o reconhecimento
+                } else {
+                    document.getElementById('resposta').innerText = "Erro: " + data.erro;
+                }
+            })
+            .catch(error => {
+                document.getElementById('resposta').innerText = "Erro ao conectar com o servidor: " + error;
+            });
+        }
+
+        function textToAudio(text) {
+            fetch('/text_to_audio', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({texto: text}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.audio_url) {
+                    const audio = new Audio(data.audio_url);
+                    audio.play();
+                }
+            });
+        }
+        
+        function testAudio() {
+            fetch('/test_audio')
+                .then(response => response.blob())
+                .then(blob => {
+                    const audioUrl = URL.createObjectURL(blob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                })
+                .catch(error => console.error('Erro ao testar áudio:', error));
+        }
+    </script>
 </body>
 
 </html>
