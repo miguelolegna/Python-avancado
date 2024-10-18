@@ -57,9 +57,15 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     border: 2px solid var(--highlight-color);
-    overflow-y: auto; /* Permite rolagem vertical dentro do container */
-    color: var(--text-color);
-    margin-right: -700px;
+    overflow-y: scroll; /* Permite rolagem vertical dentro do container */
+    scrollbar-width: none; /* Firefox: oculta a barra de rolagem */
+    -ms-overflow-style: none; /* Internet Explorer e Edge: oculta a barra de rolagem */
+    margin-left: 600px;
+}
+
+/* Esconde a barra de rolagem no Chrome, Safari e Opera */
+.container::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem */
 }
 
 /* Estilos para o conteúdo do container */
@@ -73,7 +79,6 @@ h1 {
     color: var(--secondary-text-color);
     margin-bottom: 20px;
     font-size: 30px;
-
 }
 
 /* Estilos para os subtítulos */
@@ -84,6 +89,13 @@ h2 {
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     font-size: 22px;
+}
+
+/* Estilos para os subtítulos menores */
+h3 {
+    color: var(--highlight-color);
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 /* Estilos para os parágrafos */
@@ -135,14 +147,4 @@ footer {
     text-align: center;
     font-size: 1rem;
     color: var(--secondary-text-color);
-}
-
-/* Estilos para o ícon */
-.scroll-indicator {
-    position: sticky; /* Posiciona o ícone em relação ao contêiner */
-    bottom: 20px; /* Distância do fundo do contêiner */
-    margin-left: 700px; /* Distância da borda direita do contêiner */
-    width: 40px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
-    z-index: 10; /* Garante que o ícone esteja acima do conteúdo */
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma página que descreve as tecnologias utilizadas no projeto.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/tecnologia.css') }}">
+    <title>Tecnologias Utilizadas</title>
+</head>
+
+<body>
+    <!-- Container da imagem de fundo -->
+    <div class="image-container">
+        <img id="background-image" class="image-background" src="{{ url_for('static', filename='fotos/Java.png') }}" alt="Imagem de fundo representando tecnologias">
+    </div>
+
+    <!-- Container principal do conteúdo -->
+    <main class="container">
+        <h1>Tecnologias Utilizadas</h1>
+
+        <section>
+            <h2>Java</h2>
+            <p>Java é utilizado para o desenvolvimento da interface de backend e da lógica do assistente. Sua robustez e portabilidade o tornam ideal para sistemas complexos e distribuídos.</p>
+        </section>
+
+        <section>
+            <h2>C++</h2>
+            <p>C++ é empregado para processamento de sinal, como manipulação de áudio, se necessário, ou para integração de hardware. Sua eficiência e controle de baixo nível são cruciais para tarefas que exigem alto desempenho.</p>
+        </section>
+
+        <section>
+            <h2>Python</h2>
+            <p>Python é usado para o processamento de dados e interações com APIs externas, especialmente para aprendizado de máquina se precisar de análise de dados. Sua simplicidade e vasta biblioteca de ferramentas o tornam ideal para prototipagem rápida e análise de dados.</p>
+        </section>
+
+        <section>
+            <h2>Banco de Dados (DB)</h2>
+            <p>Um sistema de gerenciamento de banco de dados robusto é utilizado para armazenar e gerenciar dados de forma eficiente. Isso permite rápida recuperação de informações e manutenção da integridade dos dados.</p>
+        </section>
+
+        <section>
+            <h2>React</h2>
+            <p>React é responsável pela criação da interface de usuário (UI) do projeto, permitindo que os usuários interajam com o assistente virtual de forma intuitiva. Sua abordagem baseada em componentes facilita o desenvolvimento de interfaces complexas e responsivas.</p>
+        </section>
+
+        <section>
+            <h2>Integração das Tecnologias</h2>
+            <p>A combinação dessas tecnologias permite criar um sistema robusto, eficiente e escalável. Java e C++ fornecem o backbone do sistema, Python facilita a integração com serviços de IA e processamento de dados, o banco de dados garante persistência e recuperação eficiente de informações, enquanto o React oferece uma interface de usuário moderna e responsiva.</p>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/API.css') }}">
+    <title>O que é uma API?</title>
+    
+</head>
+<body>
+    
+    <div class="image-container">
+        <img id="background-image" class="image-background" src="{{ url_for('static', filename='fotos/Java.png') }}" alt="Imagem de fundo representando Java">
+    </div>
+
+    <div class="container">
+    <h1>O que é uma API?</h1>
+    <p>Uma <strong>API</strong> (Interface de Programação de Aplicações) é um conjunto de definições e protocolos que permite que diferentes softwares se comuniquem. APIs são amplamente utilizadas para integrar diferentes sistemas, permitindo que aplicações distintas interajam de maneira eficiente.</p>
+    
+    <h2>Como funciona uma API?</h2>
+    
+    <h3>1. Requisição (Request)</h3>
+    <p>Um cliente, como um navegador ou uma aplicação, faz uma requisição para a API. Essa requisição geralmente contém um <strong>endpoint</strong>, que é a URL que a API usa para identificar o recurso que o cliente deseja acessar.</p>
+    
+    <h3>2. Resposta (Response)</h3>
+    <p>A API processa a requisição e retorna uma resposta ao cliente. Essa resposta normalmente inclui um <strong>código de status</strong> (para indicar se a requisição foi bem-sucedida ou se houve um erro) e os dados solicitados (geralmente em formato JSON ou XML).</p>
+    
+    <h3>3. Autenticação</h3>
+    <p>Muitas APIs exigem autenticação, o que significa que o cliente deve fornecer credenciais para acessar os dados. Isso pode ser feito através de chaves de API ou tokens de autenticação.</p>
+    
+    <h3>4. Integração.</h3>
+    <p>Através das APIs, é possível integrar .diferentes sistemas, por exemplo, um aplicativo de smartphone que utiliza a API de um serviço de clima para exibir as condições meteorológicas.</p>
+</div>
+</body>
+</html>

@@ -92,6 +92,7 @@ nav a:hover {
   /* Cor do texto ao passar o mouse */
 }
 
+<<<<<<< HEAD
 /* Botão com efeito de brilho (opcional, se desejar adicionar) */
 .glow-button {
   background-color: transparent;
@@ -112,6 +113,23 @@ nav a:hover {
   transition: color 0.3s;
   /* Transição para a cor do texto */
   margin: 10px 0;
+=======
+/* Estilos para o botão de apresentação */
+.project-presentation-button {
+    background-color: #000000;
+    color: #FFD700;
+    padding: 5px 5px; /* Reduz o padding para botões menores */
+    text-align: center;
+    border: 3px solid #eecc0d;
+    border-radius: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 120px; /* Largura definida para os botões */
+    padding: 20px 10px; /* Aumenta o padding para mais altura e largura */
+    
+    box-shadow: 0px 4px 20px #eecc0d; /* Sombra abaixo do contêiner */
+>>>>>>> 197695ea656ed9635a77d61704e5f94ecd281279
 }
 
 .glow-button::before {
