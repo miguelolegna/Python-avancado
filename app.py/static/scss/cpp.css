@@ -140,3 +140,13 @@ footer {
     font-size: 1rem;
     color: var(--secondary-text-color);
 }
+
+/* Estilos para o ícon */
+.scroll-indicator {
+    position: sticky; /* Posiciona o ícone em relação ao contêiner */
+    bottom: 20px; /* Distância do fundo do contêiner */
+    margin-left: 700px; /* Distância da borda direita do contêiner */
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    z-index: 10; /* Garante que o ícone esteja acima do conteúdo */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scss/detalhesdoprojeto.css') }}">
+    <title>Detalhes sobre o Projeto</title>
+</head>
+
+<body>
+
+
+    <div class="image-container">
+        <img id="background-image" class="image-background" src="{{ url_for('static', filename='fotos/Java.png') }}" alt="Imagem de fundo representando Java">
+    </div>
+
+    <div class="container">
+        <h1>Detalhes sobre o Projeto</h1>
+        <p>Este projeto envolve a integração de uma Inteligência Artificial (IA) com APIs de outros sistemas para criar um ambiente de colaboração e automação de tarefas.</p>
+
+        <h2>Gerenciador de Tarefas com IA - Projeto da Lara e da Abi</h2>
+        <p>
+            O sistema da Lara e da Abi será um <strong>gerenciador de tarefas</strong> com inteligência artificial. O usuário poderá se registrar no site e a IA os acompanhará em suas metas. Por exemplo, se o usuário disser: "Eu quero perder 60 kg em 3 ou 4 meses", a IA irá criar um plano de exercícios, alimentação e hábitos saudáveis, além de enviar lembretes diários com as tarefas a serem cumpridas.
+        </p>
+
+        <h3>Interação da Nossa IA com a IA delas</h3>
+        <p>
+            Nossa IA será capaz de se comunicar diretamente com a IA do sistema da Lara e da Abi por meio de uma API. O usuário poderá fazer solicitações por <strong>comandos de voz</strong>, como "Qual a próxima tarefa?" ou "Qual o progresso do meu plano?", e nossa IA enviará a solicitação para a IA delas. A resposta será recebida, processada e convertida em áudio para o usuário. Isso cria uma interação fluida entre as duas IAs.
+        </p>
+
+        <h2>Gerenciador de Desemprego</h2>
+        <p>
+            Nossa IA também se conectará a um <strong>gerenciador de desemprego</strong> por meio de outra API. Isso permitirá que nossa IA acesse informações de empresas que estão contratando e candidatos desempregados. Por exemplo, se o usuário solicitar "Preciso de programadores para minha empresa", a IA buscará essas informações na API, coletará currículos e apresentará uma lista de candidatos qualificados para a vaga.
+        </p>
+
+        <h2>Sistema de Saúde e Alimentação</h2>
+        <p>
+            O projeto de saúde da Lara envolverá um sistema focado em <strong>alimentação e bem-estar</strong>. Nossa IA será capaz de interagir com a API deles, ajudando os usuários a encontrar médicos voluntários. Se um usuário precisar, por exemplo, marcar uma consulta médica, ele poderá dizer "Preciso marcar uma consulta com um médico voluntário", e nossa IA buscará essa informação diretamente na API, exibindo os médicos disponíveis e organizando o agendamento.
+        </p>
+
+        <h2>Diferenciais da Nossa IA</h2>
+        <p>
+            O maior diferencial da nossa IA será sua capacidade de reconhecer comandos de voz, converter <strong>voz em texto</strong> e se comunicar de forma dinâmica com outras IAs por meio de APIs. Isso permitirá que ela busque e processe informações em tempo real, transforme as respostas em texto e devolva o conteúdo em áudio, criando uma experiência de usuário intuitiva e eficiente.
+        </p>
+
+        
+    </div>
+</body>
+
+</html>
