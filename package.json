@@ -1,0 +1,22 @@
+{
+  "name": "python",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx sass --verbose static/css/styles.scss static/css/styles.css",
+    "watch-css": "npx sass --watch --verbose static/css/styles.scss:static/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelolegna/Python-avan-ado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelolegna/Python-avan-ado/issues"
+  },
+  "homepage": "https://github.com/miguelolegna/Python-avan-ado#readme"
+}

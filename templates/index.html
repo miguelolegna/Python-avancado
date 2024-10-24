@@ -1,46 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='scss/styles.css') }}">
-    <title>Página Inicial</title>
-</head>
+{% block title %}Página Inicial{% endblock %}
 
-<body>
-    <div class="image-container">
-        <img id="background-image" class="image-background" src="{{ url_for('static', filename='fotos/2196508-fundo-preto-e-dourado-luxuoso-vetor_1_1.jpg') }}" alt="Background Image">
-       
-        <!-- Conteúdo no canto superior direito -->
-        <div class="top-right">
-            <h1> Documentação <br>JAI</h1>
-            <nav>
-                <div class="nav-container">
-                    <a href="/Documentação" class="project-presentation-button">Apresentação do Projeto</a>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Conteúdo no canto inferior esquerdo -->
-        <div class="bottom-left">
-            <h1>Módulos CNQ</h1>
-            <div class="button-container">
-                <!-- Linha 1 de botões -->
-                <div class="button-row">
-                    <button class="nav-button" onclick="window.location.href='/java'">Java</button>
-                    <button class="nav-button" onclick="window.location.href='/python'">Python</button>
-                    <button class="nav-button" onclick="window.location.href='/cpp'">C++</button>
-                </div>
-                <!-- Linha 2 de botões -->
-                <div class="button-row">
-                    <button class="nav-button" onclick="window.location.href='/db'">Banco de Dados.</button>
-                    <button class="nav-button" onclick="window.location.href='/reds'">Redes.</button>
-                    <button class="nav-button" onclick="window.location.href='/pross-comp'">Processamento Computacional.</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
+{% block content %}
+    <h1>Página Inicial</h1>
+    <p>Bem-vindo ao nosso site informativo sobre processamento computacional e tecnologia.</p>
+    
+    <h2>Tópicos Principais</h2>
+    <p>Aqui você pode explorar os seguintes tópicos:</p>
+    <ul>
+        <li><a href="{{ url_for('cpp') }}">C++</a></li>
+        <li><a href="{{ url_for('db') }}">Banco de Dados</a></li>
+        <li><a href="{{ url_for('java') }}">Java</a></li>
+        <li><a href="{{ url_for('python') }}">Python</a></li>
+        <li><a href="{{ url_for('tecnologia') }}">Tecnologia</a></li>
+        <li><a href="{{ url_for('prosscomp') }}">Processamento com putacional</a></li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Processamento Computacional{% endblock %}
+
+{% block content %}
+    <h1>Processamento Computacional</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#organizacao">Organização de um Computador</a></li>
+            <li><a href="#componentes">Componentes do Computador</a></li>
+            <li><a href="#memoria">Unidade de Memória</a></li>
+            <li><a href="#processador">Processador</a></li>
+        </ul>
+    </nav>
+
+    <section id="organizacao">
+        <h2>Organização de um Computador</h2>
+        <p>
+            Um computador é uma máquina que processa dados, recebendo entradas, processando-as 
+            e gerando saídas. O processamento ocorre em etapas, começando com a entrada do usuário 
+            e culminando na saída final. 
+        </p>
+        <p>
+            Por exemplo, ao abrir um programa, o sistema operacional localiza o programa na memória, 
+            carrega-o na RAM e exibe a interface do programa na tela.
+        </p>
+    </section>
+
+    <section id="componentes">
+        <h2>Componentes do Computador</h2>
+        <p>
+            Os principais componentes de um computador incluem:
+        </p>
+        <ul>
+            <li>Placa-mãe: Conecta todos os componentes do computador.</li>
+            <li>CPU: O "cérebro" do computador.</li>
+            <li>RAM: Memória utilizada para armazenar dados e programas em uso.</li>
+            <li>Dispositivos de armazenamento: HDDs, SSDs, etc.</li>
+            <li>Placa de vídeo: Processa gráficos e imagens.</li>
+            <li>Fonte de alimentação: Fornece energia para o sistema.</li>
+        </ul>
+        <img src="{{ url_for('static', filename='foto/placa_mae.jpg') }}" alt="Placa Mãe" />
+    </section>
+
+    <section id="memoria">
+        <h2>Unidade de Memória</h2>
+        <p>
+            A memória do computador é dividida em:
+        </p>
+        <ul>
+            <li><strong>Memória Primária (RAM):</strong> Armazena dados temporariamente enquanto o computador está ligado.</li>
+            <li><strong>Memória Secundária:</strong> Armazena dados permanentemente (HDD, SSD).</li>
+        </ul>
+        <p>
+            A memória é medida em bits, bytes, KB, MB, GB e TB.
+        </p>
+    </section>
+
+    <section id="processador">
+        <h2>Processador</h2>
+        <p>
+            O processador é responsável por executar instruções. Sua estrutura básica inclui:
+        </p>
+        <ul>
+            <li><strong>ULA (Unidade Lógica e Aritmética):</strong> Realiza operações aritméticas e lógicas.</li>
+            <li><strong>UC (Unidade de Controle):</strong> Controla as operações do processador.</li>
+        </ul>
+        <p>
+            Um exemplo de como a ULA e a UC trabalham juntas é a soma de dois números, onde a ULA executa 
+            a operação e a UC coordena o processo.
+        </p>
+    </section>
+{% endblock %}

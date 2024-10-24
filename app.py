@@ -1,48 +1,38 @@
-from flask import Flask, render_template # type: ignore
-from flask_assets import Environment, Bundle # type: ignore
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Configurar Flask-Assets
-assets = Environment(app)
-
-# Definir um bundle para o SCSS
-scss = Bundle('scss/styles.scss', filters='libsass', output='scss/styles.css')
-assets.register('scss_all', scss)
-
-# Rotas
-@app.route('/') 
+@app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title="Página Inicial")
 
-@app.route('/java')  
-def java():
-    return render_template('java.html')
-
-@app.route('/python') 
-def python():
-    return render_template('python.html')
-
-@app.route('/cpp')    
+@app.route('/cpp')
 def cpp():
-    return render_template('cpp.html')
+    return render_template('cpp.html', title="C++")
 
-@app.route('/db')    
-def database():
-    return render_template('db.html')
+@app.route('/db')
+def db():
+    return render_template('db.html', title="Banco de Dados")
 
-@app.route('/reds')  
-def networks():
-    return render_template('reds.html')
+@app.route('/java')
+def java():
+    return render_template('java.html', title="Java")
 
-@app.route('/pross-comp')  
-def computing():
-    return render_template('pross-comp.html')
+@app.route('/python')
+def python():
+    return render_template('python.html', title="Python")
 
-@app.route('/Documentação')  
-def documentacao():
-    return render_template('Documentação.html')
+@app.route('/prosscomp')
+def prosscomp():
+    return render_template('prosscomp.html', title="Processamento Computacional")
 
-# Iniciar o app
+@app.route('/tecnologia')
+def tecnologia():
+    return render_template('tecnologia.html', title="Tecnologia")
+
+@app.route('/reds')
+def reds():
+    return render_template('reds.html', title="Redes")
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

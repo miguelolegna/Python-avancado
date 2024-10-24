@@ -1,0 +1,115 @@
+/* Variáveis para cores */
+$bg-light-gray: #D3D3D3;
+$bg-dark-gray: #555;
+$text-color: white;
+$hover-bg: #777;
+
+/* Estilos gerais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: $bg-light-gray; /* Fundo cinza claro */
+}
+
+/* Estilos da barra lateral */
+.sidebar {
+    position: fixed;
+    left: 10px;
+    width: 50px; /* Inicialmente, um pequeno retângulo */
+    height: 100px; /* Ajusta a altura automaticamente */
+    top: 50%; /* Centralizado verticalmente */
+    transform: translateY(-50%); /* Ajusta o centramento vertical */
+    background-color: $bg-dark-gray;
+    border-radius: 10px;
+    transition: width 0.7s ease, height 0.7s ease, opacity 0.7s ease; /* Animação suave na expansão */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; /* Alinha itens verticalmente */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+
+    &:hover,
+    &.expanded {
+        width: 250px; /* Expande horizontalmente */
+        height: auto; /* Deixa a altura automática ao expandir */
+        overflow: visible; /* Garante que o conteúdo fique visível */
+    }
+
+    .menu-icon {
+        width: 100%; 
+        height: 50px; /* Tamanho fixo para a parte superior */
+        background-color: #333;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 0 0; /* Arredonda o topo da imagem */
+        }
+    }
+
+    nav {
+        opacity: 0; /* Começa escondido */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinha os links à esquerda */
+        margin: 0;
+        padding: 10px 0; /* Adiciona algum padding ao redor dos links */
+        transition: opacity 0.3s ease;
+        width: 100%; /* Preenche toda a barra lateral */
+    }
+
+    &:hover nav,
+    &.expanded nav {
+        opacity: 1; /* Torna visível ao expandir */
+    }
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        margin: 5px 20px; /* Margem para espaçamento entre links */
+        text-align: left; /* Alinha o texto à esquerda */
+        display: block;
+        width: 100%; /* Preenche a largura do contêiner */
+
+        &:hover {
+            background-color: $hover-bg; /* Cor de fundo ao passar o mouse */
+        }
+    }
+}
+
+.content-container {
+    margin-left: 20px; /* Espaço para a barra lateral se mostrar */
+    padding: 20px;
+    background-color: #f1f1f1;
+    transition: margin-left 0.5s;
+    text-align: left; /* Alinha o texto à esquerda */
+
+    /* Remover possíveis marcadores automáticos */
+    h1, h2, p {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    pre {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+
+    code {
+        font-family: monospace;
+        background-color: #222;
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    /* Se algum marcador automático for gerado por outro estilo */
+    * {
+        list-style-type: none; /* Remove qualquer estilo de lista */
+        padding: 0;
+        margin: 0;
+    }
+}

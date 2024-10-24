@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* Variáveis para cores */
+/* Estilos gerais */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #D3D3D3; /* Fundo cinza claro */
+}
+
+/* Estilos da barra lateral */
+.sidebar {
+  position: fixed;
+  left: 10px;
+  width: 50px; /* Inicialmente, um pequeno retângulo */
+  height: 100px; /* Ajusta a altura automaticamente */
+  top: 50%; /* Centralizado verticalmente */
+  transform: translateY(-50%); /* Ajusta o centramento vertical */
+  background-color: #555;
+  border-radius: 10px;
+  transition: width 0.7s ease, height 0.7s ease, opacity 0.7s ease; /* Animação suave na expansão */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Alinha itens verticalmente */
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+}
+.sidebar:hover, .sidebar.expanded {
+  width: 250px; /* Expande horizontalmente */
+  height: auto; /* Deixa a altura automática ao expandir */
+  overflow: visible; /* Garante que o conteúdo fique visível */
+}
+.sidebar .menu-icon {
+  width: 100%;
+  height: 50px; /* Tamanho fixo para a parte superior */
+  background-color: #333;
+}
+.sidebar .menu-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0; /* Arredonda o topo da imagem */
+}
+.sidebar nav {
+  opacity: 0; /* Começa escondido */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha os links à esquerda */
+  margin: 0;
+  padding: 10px 0; /* Adiciona algum padding ao redor dos links */
+  transition: opacity 0.3s ease;
+  width: 100%; /* Preenche toda a barra lateral */
+}
+.sidebar:hover nav, .sidebar.expanded nav {
+  opacity: 1; /* Torna visível ao expandir */
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 20px; /* Margem para espaçamento entre links */
+  text-align: left; /* Alinha o texto à esquerda */
+  display: block;
+  width: 100%; /* Preenche a largura do contêiner */
+}
+.sidebar a:hover {
+  background-color: #777; /* Cor de fundo ao passar o mouse */
+}
+
+.content-container {
+  margin-left: 20px; /* Espaço para a barra lateral se mostrar */
+  padding: 20px;
+  background-color: #f1f1f1;
+  transition: margin-left 0.5s;
+  text-align: left; /* Alinha o texto à esquerda */
+  /* Remover possíveis marcadores automáticos */
+  /* Se algum marcador automático for gerado por outro estilo */
+}
+.content-container h1, .content-container h2, .content-container p {
+  margin: 10px 0;
+  padding: 0;
+}
+.content-container pre {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+.content-container code {
+  font-family: monospace;
+  background-color: #222;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+}
+.content-container * {
+  list-style-type: none; /* Remove qualquer estilo de lista */
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
